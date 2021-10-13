@@ -101,6 +101,7 @@ Additionally, we can use metrics to setup analytics dashboards, follow MAU, DAU,
 
 ![image](https://user-images.githubusercontent.com/16444369/137164268-3b13acb0-5afb-4f99-8857-a6ac80fa3e6d.png)
 
+![image](https://user-images.githubusercontent.com/16444369/137164848-40205355-9049-439e-82a1-510701adfe33.png)
 
 
 
