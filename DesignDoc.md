@@ -14,10 +14,17 @@ A payments HTTP API working prototype that:
 
 ## High-level architecture
 
+![image](https://user-images.githubusercontent.com/16444369/137162975-e1455149-de0b-46e2-9574-bf58adfa785e.png)
+
+
 The 2 endpoints are represented by 2 decoupled serveless AWS Lambda microservices.
+
 They are fronted by API Gateway, a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale.
+
 For storing payment data into a secured Vault, DynamoDB was used - a fully managed, serverless, key-value NoSQL database designed to run high-performance applications at any scale.
+
 Braintree's Sandbox was used as a testing payment processor. However, the solution can be easily extended to integrate with any processor.
+
 CloudWatch was used for logging and metrics.
 
 ## Security aspects
@@ -85,3 +92,15 @@ Each alarm should come with a TSG (Troubleshooting Guide) so that the DRI (Direc
 We can use logs to troubleshoot when a problem arises.
 
 Additionally, we can use metrics to setup analytics dashboards, follow MAU, DAU, WAU and make date driven decisions.
+
+![image](https://user-images.githubusercontent.com/16444369/137163411-3b923487-056e-4498-9d44-4c28943a4083.png)
+
+![image](https://user-images.githubusercontent.com/16444369/137163233-46c8902f-acf8-476f-8345-fd478c1ecac7.png)
+
+![image](https://user-images.githubusercontent.com/16444369/137163561-45d6edc8-50e4-4ce3-9ae3-5bf69a532046.png)
+
+![image](https://user-images.githubusercontent.com/16444369/137164268-3b13acb0-5afb-4f99-8857-a6ac80fa3e6d.png)
+
+
+
+
