@@ -7,6 +7,9 @@ import service.processor.type.PaymentsProcessor;
 
 import java.math.BigDecimal;
 
+/**
+ * Implementation of a PaymentProcessor using the Braintree gateway.
+ */
 public class BraintreeProcessor implements PaymentsProcessor {
     private BraintreeGateway braintreeGateway;
 

@@ -2,6 +2,9 @@ package model.output;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * Base output response model.
+ */
 public class Response {
     @JsonProperty("requestId")
     String requestId;

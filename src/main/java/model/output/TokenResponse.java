@@ -2,6 +2,9 @@ package model.output;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * Output response model for the Tokenizing service.
+ */
 public final class TokenResponse extends Response {
     @JsonProperty("token")
     private String token;

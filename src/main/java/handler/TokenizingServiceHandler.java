@@ -10,6 +10,9 @@ import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import model.output.TokenResponse;
 import service.exception.PaymentsException;
 
+/**
+ * Main AWS Lambda function handler for the Tokenizer service.
+ */
 public class TokenizingServiceHandler implements RequestHandler<CustomerPaymentData, TokenResponse> {
     public TokenResponse handleRequest(CustomerPaymentData customerPaymentData, Context context) {
         LambdaLogger logger = context.getLogger();
@@ -18,15 +21,19 @@ public class TokenizingServiceHandler implements RequestHandler<CustomerPaymentD
 
         if (customerPaymentData.getPaymentsProcessorType() == null || customerPaymentData.getCreditCardInfo() == null) {
             response.setSuccess(false);
-            response.setErrorMessage("The CustomerPaymentData event did not meet the required format.");
+            String errorMessage = "The CustomerPaymentData event did not meet the required format.\n";
+            logger.log(errorMessage);
+            response.setErrorMessage(errorMessage);
             return response;
         }
 
         final ApplicationGraph dependencyGraph = DaggerApplicationGraph.builder().mainModule(new MainModule(logger)).build();
         try {
+            logger.log("Tokenizing new payment method for processor " + customerPaymentData.getPaymentsProcessorType() + "\n");
             String token = dependencyGraph.tokenizerService().tokenize(customerPaymentData);
             response.setToken(token);
             response.setSuccess(true);
+            logger.log("Tokenizing service has completed successfully.\n");
         } catch (PaymentsException e) {
             response.setErrorMessage(e.getMessage());
             response.setSuccess(false);

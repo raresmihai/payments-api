@@ -3,6 +3,9 @@ package model.input;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 
+/**
+ * Input request model for the Checkout service.
+ */
 public final class TransactionRequest {
     @JsonProperty("token")
     private String token;

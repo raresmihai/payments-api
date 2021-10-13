@@ -2,6 +2,9 @@ package model.input;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * Part of the Tokenizing service input request.
+ */
 public final class CreditCardInfo {
     @JsonProperty("number")
     private String number;

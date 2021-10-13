@@ -12,6 +12,9 @@ import service.processor.resolver.PaymentsProcessorResolver;
 
 import javax.inject.Inject;
 
+/**
+ * Business logic for the checkout service for processing a transaction.
+ */
 public class CheckoutServiceImpl implements CheckoutService {
     private final PaymentsProcessorResolver paymentsProcessorResolver;
 
@@ -28,8 +31,8 @@ public class CheckoutServiceImpl implements CheckoutService {
 
     @Override
     public Transaction checkout(TransactionRequest transactionData) throws PaymentsException, RepositoryException {
-        this.logger.log(transactionData.getToken());
         CustomerPaymentData paymentData = this.repository.getCustomerPaymentDataByToken(transactionData.getToken());
+        this.logger.log("Retrieved customer payment data for provided token.\n");
         PaymentsProcessorName processorName = paymentData.getPaymentsProcessorType();
         return this.paymentsProcessorResolver.resolve(processorName).checkout(transactionData.getToken(), transactionData.getAmount());
     }

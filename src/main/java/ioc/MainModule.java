@@ -27,6 +27,9 @@ import javax.inject.Singleton;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Dagger module for building the needed dependencies.
+ */
 @Module
 public class MainModule {
     private final LambdaLogger logger;

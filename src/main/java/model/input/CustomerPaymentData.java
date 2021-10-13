@@ -2,6 +2,9 @@ package model.input;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * Input request model for the Tokenizing service.
+ */
 public final class CustomerPaymentData {
     @JsonProperty("paymentsProcessorType")
     private PaymentsProcessorName paymentsProcessorType;

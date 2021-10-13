@@ -13,6 +13,9 @@ import persistency.exception.TokenDoesntExistException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Implementation of CustomerRepository using DynamoDB client.
+ */
 public class DynamoDBCustomerRepository implements CustomerRepository {
     private final DynamoDB dynamoDb;
 

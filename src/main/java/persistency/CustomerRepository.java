@@ -3,6 +3,9 @@ package persistency;
 import model.input.CustomerPaymentData;
 import persistency.exception.RepositoryException;
 
+/**
+ * Contract for interacting with the customer repository.
+ */
 public interface CustomerRepository {
     boolean customerPaymentAlreadyExists(CustomerPaymentData customerPaymentData);
 
