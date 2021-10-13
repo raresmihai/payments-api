@@ -1,4 +1,5 @@
 The endpoints can be invoked at https://3q2ygvaex2.execute-api.us-east-1.amazonaws.com.
+See https://github.com/raresmihai/payments-api/blob/main/DesignDoc.md for more details.
 
 Only a test stage has been deployed, meaning that the full access URIs are:
 - https://3q2ygvaex2.execute-api.us-east-1.amazonaws.com/test/tokenize
